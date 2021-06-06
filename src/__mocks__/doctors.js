@@ -8,7 +8,7 @@ export default [
         "address": "451 Weeping Birch Alley",
         "phone": "143-587-9238",
         "birthday": "19/03/1962",
-        "avatar": "http://dummyimage.com/144x61.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "2",
         "first_name": "Burgess",
@@ -18,7 +18,7 @@ export default [
         "address": "1389 Huxley Junction",
         "phone": "786-944-5461",
         "birthday": "21/10/1952",
-        "avatar": "http://dummyimage.com/103x99.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "3",
         "first_name": "Wain",
@@ -28,7 +28,7 @@ export default [
         "address": "6 Vahlen Terrace",
         "phone": "787-160-6619",
         "birthday": "05/08/1953",
-        "avatar": "http://dummyimage.com/90x53.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "4",
         "first_name": "Keefe",
@@ -38,7 +38,7 @@ export default [
         "address": "1 Grayhawk Crossing",
         "phone": "824-954-3979",
         "birthday": "16/04/1977",
-        "avatar": "http://dummyimage.com/101x77.png/5fa2dd/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "5",
         "first_name": "Clare",
@@ -48,7 +48,7 @@ export default [
         "address": "206 Lawn Lane",
         "phone": "467-793-9758",
         "birthday": "08/12/1958",
-        "avatar": "http://dummyimage.com/188x51.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "6",
         "first_name": "Bail",
@@ -58,7 +58,7 @@ export default [
         "address": "1426 Tomscot Place",
         "phone": "639-274-7790",
         "birthday": "28/07/1956",
-        "avatar": "http://dummyimage.com/181x68.png/5fa2dd/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "7",
         "first_name": "Gianni",
@@ -68,7 +68,7 @@ export default [
         "address": "2795 Butternut Place",
         "phone": "594-381-1089",
         "birthday": "18/07/1981",
-        "avatar": "http://dummyimage.com/120x88.png/dddddd/000000"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "8",
         "first_name": "Celisse",
@@ -78,7 +78,7 @@ export default [
         "address": "932 Clove Plaza",
         "phone": "614-488-9540",
         "birthday": "09/04/1954",
-        "avatar": "http://dummyimage.com/177x55.png/ff4444/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "9",
         "first_name": "Bee",
@@ -88,7 +88,7 @@ export default [
         "address": "12636 Eagle Crest Place",
         "phone": "231-670-4700",
         "birthday": "15/07/1954",
-        "avatar": "http://dummyimage.com/79x56.png/dddddd/000000"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "10",
         "first_name": "Leyla",
@@ -98,7 +98,7 @@ export default [
         "address": "528 Riverside Crossing",
         "phone": "487-894-1121",
         "birthday": "18/08/1978",
-        "avatar": "http://dummyimage.com/125x56.png/ff4444/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "11",
         "first_name": "Mae",
@@ -108,7 +108,7 @@ export default [
         "address": "15 Warrior Drive",
         "phone": "943-537-8079",
         "birthday": "08/09/1991",
-        "avatar": "http://dummyimage.com/195x53.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "12",
         "first_name": "Jacobo",
@@ -118,7 +118,7 @@ export default [
         "address": "1 Superior Park",
         "phone": "500-574-7657",
         "birthday": "15/12/1982",
-        "avatar": "http://dummyimage.com/216x79.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "13",
         "first_name": "Heywood",
@@ -128,7 +128,7 @@ export default [
         "address": "23298 Glacier Hill Lane",
         "phone": "203-343-9104",
         "birthday": "20/12/1995",
-        "avatar": "http://dummyimage.com/242x52.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "14",
         "first_name": "Raffaello",
@@ -138,7 +138,7 @@ export default [
         "address": "08 Florence Court",
         "phone": "985-990-8413",
         "birthday": "28/03/1970",
-        "avatar": "http://dummyimage.com/114x88.png/ff4444/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "15",
         "first_name": "Colene",
@@ -148,7 +148,7 @@ export default [
         "address": "9748 Spenser Plaza",
         "phone": "931-604-5675",
         "birthday": "23/07/1986",
-        "avatar": "http://dummyimage.com/134x77.png/5fa2dd/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "16",
         "first_name": "Jyoti",
@@ -158,7 +158,7 @@ export default [
         "address": "60 Badeau Terrace",
         "phone": "577-156-9616",
         "birthday": "11/07/1963",
-        "avatar": "http://dummyimage.com/79x70.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "17",
         "first_name": "Carena",
@@ -168,7 +168,7 @@ export default [
         "address": "37501 Oxford Plaza",
         "phone": "914-479-9331",
         "birthday": "26/07/1956",
-        "avatar": "http://dummyimage.com/217x56.png/ff4444/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "18",
         "first_name": "Jeri",
@@ -178,7 +178,7 @@ export default [
         "address": "3 Dryden Plaza",
         "phone": "480-173-7082",
         "birthday": "10/09/1972",
-        "avatar": "http://dummyimage.com/151x90.png/5fa2dd/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "19",
         "first_name": "Maury",
@@ -188,7 +188,7 @@ export default [
         "address": "9951 Armistice Hill",
         "phone": "172-215-1493",
         "birthday": "19/07/1989",
-        "avatar": "http://dummyimage.com/92x80.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "20",
         "first_name": "Kiele",
@@ -198,7 +198,7 @@ export default [
         "address": "748 Reindahl Trail",
         "phone": "545-184-3323",
         "birthday": "07/06/1970",
-        "avatar": "http://dummyimage.com/96x56.png/dddddd/000000"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "21",
         "first_name": "Orion",
@@ -208,7 +208,7 @@ export default [
         "address": "3885 Ramsey Parkway",
         "phone": "311-281-0906",
         "birthday": "18/03/1966",
-        "avatar": "http://dummyimage.com/132x51.png/5fa2dd/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "22",
         "first_name": "Mattie",
@@ -218,7 +218,7 @@ export default [
         "address": "17289 Garrison Drive",
         "phone": "502-498-6642",
         "birthday": "27/10/1979",
-        "avatar": "http://dummyimage.com/209x86.png/ff4444/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "23",
         "first_name": "Nanine",
@@ -228,7 +228,7 @@ export default [
         "address": "787 Shoshone Avenue",
         "phone": "664-150-4430",
         "birthday": "31/05/1995",
-        "avatar": "http://dummyimage.com/235x71.png/ff4444/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "24",
         "first_name": "Flinn",
@@ -238,7 +238,7 @@ export default [
         "address": "57 Westridge Road",
         "phone": "616-523-3116",
         "birthday": "09/10/1970",
-        "avatar": "http://dummyimage.com/118x87.png/cc0000/ffffff"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "25",
         "first_name": "Merry",
@@ -248,7 +248,7 @@ export default [
         "address": "973 Packers Center",
         "phone": "287-750-2119",
         "birthday": "06/10/1968",
-        "avatar": "http://dummyimage.com/150x50.png/dddddd/000000"
+        "avatar": "https://picsum.photos/200"
       }, {
         "id": "26",
         "first_name": "Toma",
