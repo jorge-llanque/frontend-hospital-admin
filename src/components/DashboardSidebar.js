@@ -21,12 +21,13 @@ import {
     UserPlus as UserPlusIcon,
     Users as UsersIcon
 } from 'react-feather';
-import NavItem from './NavItem'
+import NavItem from './NavItem';
+import av from '../../public/static/images/avatars/avatar_6.png';
 
 const user = {
-    avatar: '/static/images/avatars/avatar_6.png',
+    avatar: av,
     jobTitle: 'Senior Developer',
-    name: 'Katarina Smith'
+    name: 'Jorge LLanque Chagua'
 };
 
 const items = [
@@ -36,9 +37,9 @@ const items = [
         title: 'Dashboard'
     },
     {
-        href: '/app',
+        href: '/app/doctors',
         icon: UsersIcon,
-        title: 'Customers'
+        title: 'Doctors'
     },
     {
         href: '/app',
