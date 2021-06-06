@@ -32,7 +32,7 @@ const user = {
 
 const items = [
     {
-        href: '/app',
+        href: '/app/dashboard',
         icon: BarChartIcon,
         title: 'Dashboard'
     },
@@ -42,17 +42,22 @@ const items = [
         title: 'Doctors'
     },
     {
-        href: '/app',
+        href: '/app/patients',
         icon: ShoppingBagIcon,
-        title: 'Products'
+        title: 'Patients'
     },
     {
-        href: '/app',
+        href: '/app/specialties',
         icon: UserIcon,
-        title: 'Account'
+        title: 'Specialties'
     },
     {
-        href: '/app',
+        href: '/app/histories',
+        icon: UserIcon,
+        title: 'Histories'
+    },
+    {
+        href: '/app/settings',
         icon: SettingsIcon,
         title: 'Settings'
     }
