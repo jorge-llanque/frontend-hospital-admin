@@ -7,6 +7,7 @@ import MainLayout from '../components/MainLayout';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import NotFound from '../pages/NotFound';
+import CreateDoctor from '../pages/CreateDoctor';
 
 const routes = [
   {
@@ -15,6 +16,7 @@ const routes = [
     children: [
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'doctors', element: <DoctorList /> },
+      { path: 'doctors/create', element: <CreateDoctor /> },
       { path: '*', element: <Navigate to="/404" /> },
     ],
   },

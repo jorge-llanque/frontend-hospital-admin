@@ -27,8 +27,9 @@ const DoctorListToolbar = (props) => (
             <Button
               color="primary"
               variant="contained"
+              href="doctors/create"
             >
-                Add customer
+                Add Doctor
             </Button>
         </Box>
         <Box sx={{ mt: 3 }} >
