@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink, useLocation} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Logo from './Logo';
 import {
     Avatar,
     Box,
@@ -190,12 +191,13 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
                 variant="persistent"
                 PaperProps={{
                     sx: {
-                        width: 256,
-                        top: 64,
-                        height: 'calc(100% - 64px'
+                        width:256
                     }
                 }}
               >
+                <RouterLink to="/">
+                    <Logo />
+                </RouterLink>
                   {content}
               </Drawer>
           </Hidden>
