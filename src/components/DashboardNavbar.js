@@ -45,8 +45,8 @@ const DashboardNavbar = ({ onMobileNavOpen, onMobileClose, ...rest }) => {
             width: 'calc(100% - 256px)',
           }}
         >
-          <Toolbar>
-            <IconButton color="inherit" edge="start" onClick={onMobileClose}>
+          <Toolbar sx={{ backgroundColor: '#f4f6f8' }}>
+            <IconButton color="#6e6e6e" edge="start" onClick={onMobileClose}>
               <MenuOpenOutlinedIcon />
             </IconButton>
             <Typography variant="h2" color="textPrimary" noWrap>
@@ -55,36 +55,45 @@ const DashboardNavbar = ({ onMobileNavOpen, onMobileClose, ...rest }) => {
             <Box sx={{ flexGrow: 1 }} />
             <IconButton aria-label="show 18 new notifications" color="inherit">
               <Badge color="secondary" badgeContent={18}>
-                <NotificationsIcon style={{ fontSize: 30 }} />
+                <NotificationsIcon style={{ fontSize: 25, color: '#4b0c62' }} />
               </Badge>
             </IconButton>
             <IconButton aria-label="show 10 new messages" color="inherit">
               <Badge color="secondary" badgeContent={10}>
-                <ChatOutlinedIcon />
+                <ChatOutlinedIcon style={{ fontSize: 25, color: '#4b0c62' }} />
               </Badge>
             </IconButton>
             <IconButton aria-label="show 2 new card gift" color="inherit">
               <Badge color="secondary" badgeContent={2}>
-                <CardGiftcardIcon />
+                <CardGiftcardIcon style={{ fontSize: 25, color: '#4b0c62' }} />
               </Badge>
             </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              color="inherit"
+
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-end',
+                mx: 1,
+              }}
             >
-              <Avatar
-                variant="rounded"
-                src={avatar}
-                sx={{
-                  cursor: 'pointer',
-                  width: 40,
-                  height: 40,
-                }}
-                to="/app/account"
-              />
-            </IconButton>
+              <Typography color="#5e2b6d" variant="h5">
+                Jorge LLanque
+              </Typography>
+              <Typography color="#7d8188" variant="body2">
+                Admin
+              </Typography>
+            </Box>
+            <Avatar
+              variant="rounded"
+              src={avatar}
+              sx={{
+                cursor: 'pointer',
+                width: 40,
+                height: 40,
+              }}
+              to="/app/account"
+            />
           </Toolbar>
         </AppBar>
       </Hidden>
