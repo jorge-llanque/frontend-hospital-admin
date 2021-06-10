@@ -24,6 +24,8 @@ const DoctorListResults = ({ doctors, ...rest }) => {
   const [selectedDoctorIds, setSelectedDoctorIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
+  const [order, setOrder] = useState('asc');
+  const [orderBy, setOrderBy] = useState('name');
 
   const handleSelectAll = (event) => {
     let newSelectedDoctorIds;
@@ -35,6 +37,12 @@ const DoctorListResults = ({ doctors, ...rest }) => {
     }
 
     setSelectedDoctorIds(newSelectedDoctorIds);
+  };
+
+  const handleRequestSort = (event, property) => {
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
   };
 
   const handleSelectOne = (event, id) => {
@@ -117,7 +125,13 @@ const DoctorListResults = ({ doctors, ...rest }) => {
     },
   ];
 
-  const EnhancedTableHead = () => {
+  const EnhancedTableHead = (props) => {
+    const { order, orderBy, onRequestSort } = props;
+
+    const createSortHandler = (property) => (event) => {
+      onRequestSort(event, property);
+    };
+
     return (
       <TableHead>
         <TableRow>
@@ -135,11 +149,16 @@ const DoctorListResults = ({ doctors, ...rest }) => {
           {headCells.map((headCell) => (
             <TableCell
               key={headCell.id}
-              align={headCell.numeric ? 'right' : 'left'}
               padding={headCell.disablePadding ? 'none' : 'default'}
               sortDirection={orderBy === headCell.id ? order : false}
             >
-              <TableSortLabel>{headCell.label}</TableSortLabel>
+              <TableSortLabel
+                active={orderBy === headCell.id}
+                direction={orderBy === headCell.id ? order : 'asc'}
+                onClick={createSortHandler(headCell.id)}
+              >
+                {headCell.label}
+              </TableSortLabel>
             </TableCell>
           ))}
         </TableRow>
@@ -153,7 +172,11 @@ const DoctorListResults = ({ doctors, ...rest }) => {
         <Box sx={{ minWidth: 1050 }}>
           <EnhancedTableToolbar />
           <Table>
-            <EnhancedTableHead />
+            <EnhancedTableHead
+              order={order}
+              orderBy={orderBy}
+              onRequestSort={handleRequestSort}
+            />
             <TableBody>
               {doctors.slice(0, limit).map((doctor) => (
                 <TableRow
