@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import Logo from './Logo';
-import {
-  Avatar,
-  Box,
-  Button,
-  Divider,
-  Drawer,
-  Hidden,
-  IconButton,
-  List,
-  Typography,
-} from '@material-ui/core';
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import Hidden from '@material-ui/core/Hidden';
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -24,15 +22,45 @@ import {
   Users as UsersIcon,
 } from 'react-feather';
 import NavItem from './NavItem';
-import MenuIcon from '@material-ui/icons/Menu';
-import av from '../../public/static/images/avatars/avatar_6.png';
+import { Box } from '@material-ui/core';
+
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+  toolbarIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  },
+  drawerPaper: {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerPaperClose: {
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    width: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9),
+    },
+  },
+}));
 
 const user = {
-  avatar: av,
+  avatar: 'avatar',
   jobTitle: 'Senior Developer',
   name: 'Jorge LLanque Chagua',
 };
-
 const items = [
   {
     href: '/app/dashboard',
@@ -66,50 +94,33 @@ const items = [
   },
 ];
 
-const DashboardSidebar = ({ onMobileClose, openMobile }) => {
-  const location = useLocation();
+const DashboardSidebar = ({ open, openMobile, handleDrawerClose }) => {
+  const classes = useStyles();
 
-  useEffect(() => {
-    if (openMobile && onMobileClose) {
-      onMobileClose();
-    }
-  }, [location.pathname]);
+  return (
+    <>
+      <Hidden lgUp>
+        <Drawer
+          anchor="left"
+          onClose={handleDrawerClose}
+          open={open}
+          variant="temporary"
+        ></Drawer>
+      </Hidden>
 
-  const content = (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-      }}
-    >
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          p: 2,
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
         }}
+        open={open}
       >
-        <Avatar
-          component={RouterLink}
-          src={user.avatar}
-          sx={{
-            cursor: 'pointer',
-            width: 64,
-            height: 64,
-          }}
-          to="/app/account"
-        />
-        <Typography color="textPrimary" variant="h5">
-          {user.name}
-        </Typography>
-        <Typography color="textSecondary" variant="body2">
-          {user.jobTitle}
-        </Typography>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
+        <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <Divider />
         <List>
           {items.map((item) => (
             <NavItem
@@ -120,79 +131,7 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
             />
           ))}
         </List>
-      </Box>
-      <Box sx={{ flexGrow: 1 }} />
-      <Box
-        sx={{
-          backgroundColor: 'background.default',
-          m: 2,
-          p: 2,
-        }}
-      >
-        <Typography align="center" gutterBottom variant="h4">
-          Need more?
-        </Typography>
-        <Typography align="center" variant="body2">
-          Upgrade to PRO version and access 20 more screens
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            pt: 2,
-          }}
-        >
-          <Button
-            color="primary"
-            component="a"
-            href="https://github.com/jorge-llanque"
-            variant="contained"
-          >
-            See PRO version
-          </Button>
-        </Box>
-      </Box>
-    </Box>
-  );
-
-  return (
-    <>
-      <Hidden lgUp>
-        <Drawer
-          anchor="left"
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-          PaperProps={{
-            sx: {
-              width: 256,
-            },
-          }}
-        >
-          {content}
-        </Drawer>
-      </Hidden>
-
-      <Hidden lgDown>
-        <Drawer
-          anchor="left"
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: 256,
-            },
-          }}
-        >
-          <RouterLink to="/">
-            <Logo />
-            <IconButton onClose={onMobileClose}>
-              <MenuIcon />
-            </IconButton>
-          </RouterLink>
-          {content}
-        </Drawer>
-      </Hidden>
+      </Drawer>
     </>
   );
 };

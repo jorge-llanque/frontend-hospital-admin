@@ -1,72 +1,68 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
-import DashboardNavbar from './DashboardNavbar';
-import DashboardSidebar from './DashboardSidebar';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import DashboardNavbar from '../components/DashboardNavbar';
+import DashboardSidebar from '../components/DashboardSidebar';
 
-const useStyles = makeStyles((theme) => {
-  return {
-    root: {
-      backgroundColor: theme.palette.background.default,
-      display: 'flex',
-      height: '100%',
-      overflow: 'hidden',
-      width: '100%',
-    },
-    wrapper: {
-      display: 'flex',
-      flex: '1 1 auto',
-      overflow: 'hidden',
-      paddingTop: 64,
-      [theme.breakpoints.up('lg')]: {
-        paddingLeft: 256,
-      },
-    },
-    container: {
-      display: 'flex',
-      flex: '1 1 auto',
-      overflow: 'hidden',
-    },
-    content: {
-      flex: '1 1 auto',
-      height: '100%',
-      overflow: 'auto',
-    },
-  };
-});
+const drawerWidth = 240;
 
-const DashboardLayout = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto',
+  },
+  container: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+  },
+  paper: {
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
+  },
+  fixedHeight: {
+    height: 240,
+  },
+}));
+
+export default function Dashboard() {
   const classes = useStyles();
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
   const [open, setOpen] = useState(true);
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
-      <DashboardNavbar
-        onMobileNavOpen={() => setMobileNavOpen(true)}
-        onMobileClose={() => setMobileNavOpen(false)}
-      />
+      <CssBaseline />
+      <DashboardNavbar handleDrawerOpen={handleDrawerOpen} open={open} />
       <DashboardSidebar
-        onMobileClose={() => setMobileNavOpen(false)}
-        openMobile={isMobileNavOpen}
+        handleDrawerClose={handleDrawerClose}
+        open={open}
+        openMobile={() => setOpen(false)}
       />
-      <div className={classes.wrapper}>
-        <div className={classes.container}>
-          <div className={classes.content}>
-            <Outlet />
-          </div>
-        </div>
-      </div>
+
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container maxWidth="lg" className={classes.container}>
+          <Outlet />
+        </Container>
+      </main>
     </div>
   );
-};
-
-export default DashboardLayout;
+}

@@ -12,6 +12,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import NotFound from '../pages/NotFound';
 import CreateDoctor from '../pages/CreateDoctor';
+import FuckLayout from '../components/FuckLayout';
 
 const routes = [
   {
@@ -21,10 +22,11 @@ const routes = [
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'doctors', element: <DoctorList /> },
       { path: 'doctors/create', element: <CreateDoctor /> },
-      { path: 'patients', element:<PatientList />},
-      { path: 'specialties', element:<SpecialtyList />},
-      { path: 'histories', element:<HistoryList />},
-      { path: 'settings', element:<Settings />},
+      { path: 'patients', element: <PatientList /> },
+      { path: 'specialties', element: <SpecialtyList /> },
+      { path: 'histories', element: <HistoryList /> },
+      { path: 'settings', element: <Settings /> },
+      { path: '/', element: <Navigate to="/app/dashboard" /> },
       { path: '*', element: <Navigate to="/404" /> },
     ],
   },
